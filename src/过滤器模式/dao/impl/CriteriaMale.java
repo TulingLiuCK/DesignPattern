@@ -1,0 +1,24 @@
+package 过滤器模式.dao.impl;
+
+import 过滤器模式.dao.Shaixuan;
+import 过滤器模式.pojo.Person;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/***
+ #Create by LCK on 2022/3/31
+ # 用法:
+ */
+public class CriteriaMale implements Shaixuan {
+    @Override
+    public List<Person> meetCriteria(List<Person> persons) {
+        List<Person> malePersons  = new ArrayList<>();
+        for (Person person : persons) {
+            if (person.getGender().equalsIgnoreCase("MALE")){
+                malePersons.add(person);
+            }
+        }
+        return malePersons;
+    }
+}
